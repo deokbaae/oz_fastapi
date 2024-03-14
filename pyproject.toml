@@ -24,6 +24,13 @@ pytest = "^8.1.1"
 [tool.mypy]
 python_version = 3.11
 strict = true
+plugins = [
+    "pydantic.mypy"
+]
+
+[[tool.mypy.overrides]]
+module = "migrations.models.*"
+ignore_errors = true
 
 [tool.aerich]
 tortoise_orm = "app.settings.database_settings.TORTOISE_ORM"
