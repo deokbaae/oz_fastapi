@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "oz-fastapi"
+version = "0.1.0"
+description = ""
+authors = ["triumph1 <seungwon.jeong@wesang.com>"]
+readme = "README.md"
+packages = [{include = "oz_fastapi"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.110.0"
+uvicorn = "^0.28.0"
+tortoise-orm = {extras = ["asyncmy"], version = "^0.20.0"}
+aerich = "^0.7.2"
+pydantic-settings = "^2.2.1"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.9.0"
+black = "^24.2.0"
+isort = "^5.13.2"
+pytest = "^8.1.1"
+
+[tool.mypy]
+python_version = 3.11
+strict = true
+
+[tool.aerich]
+tortoise_orm = "app.settings.database_settings.TORTOISE_ORM"
+location = "./migrations"
+src_folder = "./."
