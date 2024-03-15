@@ -7,7 +7,7 @@ from app.models.comment import Comment
 
 
 class TestArticleRouter(TestCase):
-    async def test_글과_댓글이_함께_리턴된다(self) -> None:
+    async def test_get_article_and_comment(self) -> None:
         # given
         article_id = "test_article"
         article = await Article.create(
