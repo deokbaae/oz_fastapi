@@ -13,6 +13,7 @@ uvicorn = "^0.28.0"
 tortoise-orm = {extras = ["asyncmy"], version = "^0.20.0"}
 aerich = "^0.7.2"
 pydantic-settings = "^2.2.1"
+httpx = "^0.27.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -20,6 +21,7 @@ mypy = "^1.9.0"
 black = "^24.2.0"
 isort = "^5.13.2"
 pytest = "^8.1.1"
+pytest-asyncio = "^0.23.5.post1"
 
 [tool.mypy]
 python_version = 3.11
@@ -33,6 +35,6 @@ module = "migrations.models.*"
 ignore_errors = true
 
 [tool.aerich]
-tortoise_orm = "app.settings.database_settings.TORTOISE_ORM"
+tortoise_orm = "app.configs.database_settings.TORTOISE_ORM"
 location = "./migrations"
 src_folder = "./."
