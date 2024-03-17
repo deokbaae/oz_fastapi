@@ -13,10 +13,10 @@ class TestArticleRouter(TestCase):
         article = await Article.create(
             id=article_id, author="author", title="title", body="body"
         )
-        comment1 = await Comment.create(
+        await Comment.create(
             id="comment1", article=article, author="c1_author", body="c1_body"
         )
-        comment2 = await Comment.create(
+        await Comment.create(
             id="comment2", article=article, author="c2_author", body="c2_body"
         )
 
