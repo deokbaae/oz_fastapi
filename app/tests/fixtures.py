@@ -28,7 +28,7 @@ def get_test_db_config() -> Any:
     return config
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="session", autouse=True)
 def event_loop() -> Generator[AbstractEventLoop, None, None]:
     loop = asyncio.get_event_loop()
     yield loop
