@@ -15,4 +15,4 @@ class Settings(BaseSettings):
     DB_PORT: int = 3306
     DB_USER: str = "root"
     DB_PASSWORD: str = "1234"
-    DB_DB: str = "oz_fastapi2"
+    DB_DB: str = "oz_fastapi"
