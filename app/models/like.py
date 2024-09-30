@@ -9,13 +9,13 @@ from app.models.base_model import BaseModel
 
 class Like(BaseModel, Model):
     article: fields.ForeignKeyRelation[Article] = fields.ForeignKeyField(
-        "models.Article", related_name="comments", db_constraint=False
+        "models.Article", related_name="likes", db_constraint=False
     )
     author = fields.CharField(max_length=255)
     body = fields.TextField()
 
     class Meta:
-        table = "comments"
+        table = "likes"
 
     @classmethod
     async def get_all_by_article_id(cls, article_id: str) -> list[Like]:
